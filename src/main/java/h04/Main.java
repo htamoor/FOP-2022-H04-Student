@@ -15,11 +15,16 @@ public class Main {
         World.setDelay(200);
         World.setVisible(true);
 
-        if (ENABLE_CORRECTNESS_CHECK) {
+       if (ENABLE_CORRECTNESS_CHECK) {
             //System.out.println("All tests: " + (new ArrayTesterImpl()).testAll(new ArrayProducerImpl(), BASIC_ARRAY_SIZE)); // einkommentieren für H3
         } else {
             robotTests();
         }
+
+        RepetitiveRobotImpl robot = new RepetitiveRobotImpl(2);
+        robot.move(2);
+        robot.move();
+        System.out.println(robot.getX());
     }
 
     public static void robotTests() {
